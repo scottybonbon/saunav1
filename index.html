@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&display=swap" rel="stylesheet">
+<script src="./image-slot.js"></script>
+<style>
+*{box-sizing:border-box;}
+html,body{margin:0;padding:0;background:#1A1512;overflow-x:hidden;}
+body{font-family:'Hanken Grotesk',sans-serif;color:#F1ECE3;-webkit-font-smoothing:antialiased;}
+a{color:inherit;text-decoration:none;}
+a:hover{color:var(--accent,#AE5233);}
+::selection{background:var(--accent,#AE5233);color:#F1ECE3;}
+section{scroll-margin-top:76px;}
+</style>
+</helmet>
+
+<div ref="{{ rootRef }}" data-screen-label="HouseHold Saunas" style="--accent:#AE5233;position:relative;background:#1A1512;">
+
+  <nav ref="{{ navRef }}" style="position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px clamp(20px,5vw,64px);border-bottom:1px solid transparent;background:linear-gradient(rgba(20,17,14,.55),rgba(20,17,14,0));transition:background .35s ease,border-color .35s ease;">
+    <a href="#top" style="display:flex;align-items:center;"><img src="uploads/HouseHold%20logo.png" alt="HouseHold Saunas" style="height:19px;width:auto;display:block;"></a>
+    <sc-if value="{{ showNavLinks }}" hint-placeholder-val="{{ true }}"><div style="display:flex;align-items:center;gap:clamp(20px,2.4vw,40px);">
+      <a href="#elements" style="font-size:15px;color:rgba(241,236,227,.82);">Elements</a>
+      <a href="#models" style="font-size:15px;color:rgba(241,236,227,.82);">Rooms</a>
+      <a href="#made" style="font-size:15px;color:rgba(241,236,227,.82);">Made here</a>
+      <a href="#installation" style="font-size:15px;color:rgba(241,236,227,.82);">Installation</a>
+      <a href="#homes" style="font-size:15px;color:rgba(241,236,227,.82);">Homes</a>
+    </div></sc-if>
+    <a href="#plan" style="font-size:14.5px;font-weight:600;background:var(--accent,#AE5233);color:#F1ECE3;padding:11px 22px;white-space:nowrap;" style-hover="background:#F1ECE3;color:#1A1512;">Plan yours</a>
+  </nav>
+
+  <header id="top" style="position:relative;height:100vh;min-height:640px;overflow:hidden;background:#0F0C0A;">
+    <video src="uploads/5980044-uhd_4096_2160_24fps.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:saturate(1.02) brightness(.82) contrast(1.02);"></video>
+    <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,12,10,.5) 0%,rgba(15,12,10,.05) 40%,rgba(15,12,10,.88) 100%);"></div>
+
+    <div style="position:absolute;left:clamp(20px,5vw,64px);right:clamp(20px,5vw,64px);bottom:clamp(44px,7vw,84px);">
+      <h1 data-hero style="margin:0 0 26px;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(62px,13.5vw,196px);line-height:.9;letter-spacing:-.02em;color:#F1ECE3;">heat heals.</h1>
+      <p data-hero style="margin:0 0 40px;max-width:500px;font-size:clamp(17px,1.5vw,21px);line-height:1.55;color:rgba(241,236,227,.82);text-wrap:pretty;">Canadian saunas made for the people you want to sit with, and the time those simple things give back.</p>
+      <div data-hero style="display:flex;flex-wrap:wrap;gap:14px;">
+        <a href="#models" style="font-size:15px;font-weight:600;background:var(--accent,#AE5233);color:#F1ECE3;padding:16px 32px;" style-hover="background:#F1ECE3;color:#1A1512;">Find your room</a>
+        <a href="#elements" style="font-size:15px;font-weight:600;background:rgba(241,236,227,.1);color:#F1ECE3;padding:16px 32px;border:1px solid rgba(241,236,227,.3);" style-hover="background:rgba(241,236,227,.2);">See how it works</a>
+      </div>
+    </div>
+  </header>
+
+  <section data-screen-label="Proposition" style="background:#F1ECE3;color:#241C16;padding:clamp(88px,12vw,176px) clamp(20px,5vw,64px);">
+    <div style="max-width:1440px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:clamp(40px,6vw,88px);align-items:center;">
+      <div data-reveal>
+        <h2 style="margin:0 0 12px;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(34px,4.6vw,68px);line-height:1.02;letter-spacing:-.015em;color:rgba(36,28,22,.38);">Your home has rooms for everything.</h2>
+        <h2 style="margin:0 0 32px;font-family:'Newsreader',serif;font-weight:500;font-size:clamp(34px,4.6vw,68px);line-height:1.02;letter-spacing:-.015em;color:#241C16;">Build one for people.</h2>
+        <p style="margin:0;max-width:440px;font-size:17px;line-height:1.65;color:rgba(36,28,22,.72);text-wrap:pretty;">A sauna is the rare room that slows a group down. Phones stay outside. The talk gets easier, or it stops, and nobody minds. It is the most human room you can add to a home, and the one people remember.</p>
+      </div>
+      <div data-reveal data-steam style="position:relative;aspect-ratio:4/5;overflow:hidden;background:#D8CFC2;">
+        <div data-steam-img style="position:absolute;inset:0;"><image-slot id="ch-prop-group" shape="rect" placeholder="Four friends seated together inside the sauna, mid-conversation (people photography)"></image-slot></div>
+        <div data-steam-fog style="position:absolute;inset:0;background:rgba(241,236,227,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);pointer-events:none;"></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="elements" data-screen-label="Elements" style="background:#1A1512;color:#F1ECE3;padding:clamp(96px,13vw,196px) clamp(20px,5vw,64px);">
+    <div style="max-width:1440px;margin:0 auto;">
+      <div data-reveal style="max-width:820px;margin-bottom:clamp(56px,7vw,96px);">
+        <h2 style="margin:0 0 24px;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(40px,6.5vw,104px);line-height:1;letter-spacing:-.02em;">Wood. Water.<br>Stone. Heat.</h2>
+        <p style="margin:0;max-width:520px;font-family:'Newsreader',serif;font-size:clamp(19px,1.8vw,26px);line-height:1.4;color:rgba(241,236,227,.72);text-wrap:pretty;">Four simple things, older than language, and still the fastest way back to your own <span style="font-style:italic;color:var(--accent,#AE5233);">breath</span>.</p>
+      </div>
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1px;background:rgba(241,236,227,.16);border:1px solid rgba(241,236,227,.16);">
+        <div data-el-card style="position:relative;overflow:hidden;background:#1A1512;padding:clamp(30px,3.2vw,44px) clamp(22px,2.4vw,34px) clamp(40px,4.4vw,60px);min-height:clamp(240px,26vw,340px);">
+          <div data-el-img style="position:absolute;inset:0;opacity:0;transition:opacity .7s ease;pointer-events:none;"><image-slot id="ch-el-wood" shape="rect" placeholder="Macro close-up: cedar grain"></image-slot><div style="position:absolute;inset:0;background:linear-gradient(rgba(26,21,18,.35),rgba(26,21,18,.72));"></div></div>
+          <div style="position:relative;z-index:1;">
+            <h3 style="margin:0 0 14px;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(28px,2.8vw,38px);">Wood</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(241,236,227,.66);">Cedar that warms the air and gives off a scent you feel before you can name it.</p>
+          </div>
+        </div>
+        <div data-el-card style="position:relative;overflow:hidden;background:#1A1512;padding:clamp(30px,3.2vw,44px) clamp(22px,2.4vw,34px) clamp(40px,4.4vw,60px);min-height:clamp(240px,26vw,340px);">
+          <div data-el-img style="position:absolute;inset:0;opacity:0;transition:opacity .7s ease;pointer-events:none;"><image-slot id="ch-el-water" shape="rect" placeholder="Macro close-up: water poured across hot stones"></image-slot><div style="position:absolute;inset:0;background:linear-gradient(rgba(26,21,18,.35),rgba(26,21,18,.72));"></div></div>
+          <div style="position:relative;z-index:1;">
+            <h3 style="margin:0 0 14px;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(28px,2.8vw,38px);">Water</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(241,236,227,.66);">A ladle across the stones. The room softens, and so do you.</p>
+          </div>
+        </div>
+        <div data-el-card style="position:relative;overflow:hidden;background:#1A1512;padding:clamp(30px,3.2vw,44px) clamp(22px,2.4vw,34px) clamp(40px,4.4vw,60px);min-height:clamp(240px,26vw,340px);">
+          <div data-el-img style="position:absolute;inset:0;opacity:0;transition:opacity .7s ease;pointer-events:none;"><image-slot id="ch-el-stone" shape="rect" src="uploads/pexels-huum-sauna-heaters-718199222-37816612.jpg" placeholder="Macro close-up: sauna stones"></image-slot><div style="position:absolute;inset:0;background:linear-gradient(rgba(26,21,18,.35),rgba(26,21,18,.72));"></div></div>
+          <div style="position:relative;z-index:1;">
+            <h3 style="margin:0 0 14px;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(28px,2.8vw,38px);">Stone</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(241,236,227,.66);">Mass enough to hold the heat even and kind, never sharp.</p>
+          </div>
+        </div>
+        <div data-el-card style="position:relative;overflow:hidden;background:#1A1512;padding:clamp(30px,3.2vw,44px) clamp(22px,2.4vw,34px) clamp(40px,4.4vw,60px);min-height:clamp(240px,26vw,340px);">
+          <div data-el-img style="position:absolute;inset:0;opacity:0;transition:opacity .7s ease;pointer-events:none;"><image-slot id="ch-el-heat" shape="rect" src="uploads/pexels-huum-sauna-heaters-718199222-33517869.jpg" placeholder="Macro close-up: glowing embers"></image-slot><div style="position:absolute;inset:0;background:linear-gradient(rgba(26,21,18,.35),rgba(26,21,18,.72));"></div></div>
+          <div style="position:relative;z-index:1;">
+            <h3 style="margin:0 0 14px;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(28px,2.8vw,38px);">Heat</h3>
+            <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(241,236,227,.66);">The oldest way we know to put the day down and come back to yourself.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="models" data-screen-label="The Rooms" style="background:#D8CFC2;color:#241C16;padding:clamp(88px,12vw,168px) clamp(20px,5vw,64px);">
+    <div style="max-width:1440px;margin:0 auto;">
+      <div data-reveal style="display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px 40px;margin-bottom:clamp(40px,5vw,64px);">
+        <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(34px,4.4vw,64px);line-height:1;letter-spacing:-.015em;">Four rooms for company.</h2>
+        <p style="margin:0;max-width:340px;font-size:15.5px;line-height:1.6;color:rgba(36,28,22,.68);">Sized by the people who sit comfortably in them, not the bodies that fit. Prices are indicative, in CAD.</p>
+      </div>
+
+      <div data-reveal style="border-top:1px solid rgba(36,28,22,.2);padding:clamp(28px,3.6vw,48px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,64px);align-items:start;">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;"><h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(30px,3.2vw,44px);letter-spacing:-.01em;">Common Four</h3><span style="font-family:'Newsreader',serif;font-style:italic;font-size:18px;color:var(--accent,#AE5233);">from $26,000</span></div>
+          <p style="margin:14px 0 0;font-size:16px;line-height:1.6;color:rgba(36,28,22,.7);max-width:360px;">The everyday gathering room. Four seats, angled toward one another, warm in under an hour.</p>
+          <svg viewBox="0 0 140 84" width="118" style="display:block;margin-top:26px;">
+            <rect x="1.5" y="1.5" width="137" height="81" rx="10" fill="none" stroke="#241C16" stroke-opacity=".2" stroke-width="1.5"></rect>
+            <rect x="20" y="11" width="100" height="6" rx="3" fill="#241C16" fill-opacity=".16"></rect>
+            <rect x="20" y="67" width="100" height="6" rx="3" fill="#241C16" fill-opacity=".16"></rect>
+            <circle cx="52" cy="31" r="8" fill="var(--accent,#AE5233)"></circle><circle cx="88" cy="31" r="8" fill="var(--accent,#AE5233)"></circle>
+            <circle cx="52" cy="53" r="8" fill="var(--accent,#AE5233)"></circle><circle cx="88" cy="53" r="8" fill="var(--accent,#AE5233)"></circle>
+          </svg>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 32px;font-size:14.5px;">
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Capacity</p><p style="margin:0;font-weight:500;">4 people</p></div>
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Footprint</p><p style="margin:0;font-weight:500;">2.0 &times; 2.1 m</p></div>
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Heat</p><p style="margin:0;font-weight:500;">Electric or wood</p></div>
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Delivery</p><p style="margin:0;font-weight:500;">Common Complete</p></div>
+          <a href="#plan" style="grid-column:1/-1;margin-top:8px;font-weight:600;color:var(--accent,#AE5233);">Explore Common Four &rarr;</a>
+        </div>
+      </div>
+
+      <div data-reveal style="border-top:1px solid rgba(36,28,22,.2);padding:clamp(28px,3.6vw,48px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,64px);align-items:start;">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;"><h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(30px,3.2vw,44px);letter-spacing:-.01em;">Common Six</h3><span style="font-family:'Newsreader',serif;font-style:italic;font-size:18px;color:var(--accent,#AE5233);">from $38,000</span></div>
+          <p style="margin:14px 0 0;font-size:16px;line-height:1.6;color:rgba(36,28,22,.7);max-width:360px;">The larger social model, for families, cabins and people who host often enough to need the room.</p>
+          <svg viewBox="0 0 140 84" width="118" style="display:block;margin-top:26px;">
+            <rect x="1.5" y="1.5" width="137" height="81" rx="10" fill="none" stroke="#241C16" stroke-opacity=".2" stroke-width="1.5"></rect>
+            <rect x="16" y="11" width="108" height="6" rx="3" fill="#241C16" fill-opacity=".16"></rect>
+            <rect x="16" y="67" width="108" height="6" rx="3" fill="#241C16" fill-opacity=".16"></rect>
+            <circle cx="40" cy="31" r="7.5" fill="var(--accent,#AE5233)"></circle><circle cx="70" cy="31" r="7.5" fill="var(--accent,#AE5233)"></circle><circle cx="100" cy="31" r="7.5" fill="var(--accent,#AE5233)"></circle>
+            <circle cx="40" cy="53" r="7.5" fill="var(--accent,#AE5233)"></circle><circle cx="70" cy="53" r="7.5" fill="var(--accent,#AE5233)"></circle><circle cx="100" cy="53" r="7.5" fill="var(--accent,#AE5233)"></circle>
+          </svg>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 32px;font-size:14.5px;">
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Capacity</p><p style="margin:0;font-weight:500;">6 people</p></div>
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Footprint</p><p style="margin:0;font-weight:500;">2.4 &times; 3.0 m</p></div>
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Heat</p><p style="margin:0;font-weight:500;">Electric or wood</p></div>
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Delivery</p><p style="margin:0;font-weight:500;">Common Complete</p></div>
+          <a href="#plan" style="grid-column:1/-1;margin-top:8px;font-weight:600;color:var(--accent,#AE5233);">Explore Common Six &rarr;</a>
+        </div>
+      </div>
+
+      <div data-reveal style="border-top:1px solid rgba(36,28,22,.2);padding:clamp(28px,3.6vw,48px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,64px);align-items:start;">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;"><h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(30px,3.2vw,44px);letter-spacing:-.01em;">Common House</h3><span style="font-family:'Newsreader',serif;font-style:italic;font-size:18px;color:var(--accent,#AE5233);">from $62,000</span></div>
+          <p style="margin:14px 0 0;font-size:16px;line-height:1.6;color:rgba(36,28,22,.7);max-width:360px;">A whole environment. Hot room, covered place to cool down, a changing threshold and somewhere to sit after.</p>
+          <svg viewBox="0 0 140 84" width="118" style="display:block;margin-top:26px;">
+            <rect x="1.5" y="1.5" width="137" height="81" rx="10" fill="none" stroke="#241C16" stroke-opacity=".2" stroke-width="1.5"></rect>
+            <line x1="86" y1="2" x2="86" y2="82" stroke="#241C16" stroke-opacity=".16" stroke-width="1.5" stroke-dasharray="4 5"></line>
+            <rect x="14" y="11" width="60" height="6" rx="3" fill="#241C16" fill-opacity=".16"></rect>
+            <rect x="14" y="67" width="60" height="6" rx="3" fill="#241C16" fill-opacity=".16"></rect>
+            <circle cx="30" cy="31" r="7" fill="var(--accent,#AE5233)"></circle><circle cx="56" cy="31" r="7" fill="var(--accent,#AE5233)"></circle>
+            <circle cx="30" cy="53" r="7" fill="var(--accent,#AE5233)"></circle><circle cx="56" cy="53" r="7" fill="var(--accent,#AE5233)"></circle>
+            <circle cx="108" cy="34" r="7" fill="none" stroke="var(--accent,#AE5233)" stroke-width="2"></circle><circle cx="108" cy="54" r="7" fill="none" stroke="var(--accent,#AE5233)" stroke-width="2"></circle>
+          </svg>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 32px;font-size:14.5px;">
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Capacity</p><p style="margin:0;font-weight:500;">6 to 8, plus cooling room</p></div>
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Footprint</p><p style="margin:0;font-weight:500;">3.0 &times; 5.0 m</p></div>
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Heat</p><p style="margin:0;font-weight:500;">Wood-fired</p></div>
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Delivery</p><p style="margin:0;font-weight:500;">Common Complete</p></div>
+          <a href="#plan" style="grid-column:1/-1;margin-top:8px;font-weight:600;color:var(--accent,#AE5233);">Explore Common House &rarr;</a>
+        </div>
+      </div>
+
+      <div data-reveal style="border-top:1px solid rgba(36,28,22,.2);border-bottom:1px solid rgba(36,28,22,.2);padding:clamp(28px,3.6vw,48px) 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:clamp(24px,4vw,64px);align-items:start;">
+        <div>
+          <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;"><h3 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(30px,3.2vw,44px);letter-spacing:-.01em;">Common Custom</h3><span style="font-family:'Newsreader',serif;font-style:italic;font-size:18px;color:var(--accent,#AE5233);">on request</span></div>
+          <p style="margin:14px 0 0;font-size:16px;line-height:1.6;color:rgba(36,28,22,.7);max-width:360px;">Residential and hospitality commissions, drawn around a specific site and the people it is for.</p>
+          <svg viewBox="0 0 140 84" width="118" style="display:block;margin-top:26px;">
+            <rect x="1.5" y="1.5" width="137" height="81" rx="10" fill="none" stroke="#241C16" stroke-opacity=".25" stroke-width="1.5" stroke-dasharray="6 6"></rect>
+            <circle cx="48" cy="42" r="7" fill="none" stroke="var(--accent,#AE5233)" stroke-width="2"></circle>
+            <circle cx="80" cy="30" r="7" fill="none" stroke="var(--accent,#AE5233)" stroke-width="2"></circle>
+            <circle cx="86" cy="56" r="7" fill="none" stroke="var(--accent,#AE5233)" stroke-width="2"></circle>
+            <path d="M104 42 h18 M113 33 v18" stroke="var(--accent,#AE5233)" stroke-width="2.5" stroke-linecap="round"></path>
+          </svg>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 32px;font-size:14.5px;">
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Capacity</p><p style="margin:0;font-weight:500;">By design</p></div>
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Footprint</p><p style="margin:0;font-weight:500;">To site</p></div>
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Heat</p><p style="margin:0;font-weight:500;">Electric or wood</p></div>
+          <div><p style="margin:0 0 4px;color:rgba(36,28,22,.5);">Delivery</p><p style="margin:0;font-weight:500;">Commission</p></div>
+          <a href="#plan" style="grid-column:1/-1;margin-top:8px;font-weight:600;color:var(--accent,#AE5233);">Start a commission &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="made" data-screen-label="Made in BC" style="background:#1A1512;color:#F1ECE3;padding:clamp(88px,12vw,176px) clamp(20px,5vw,64px);">
+    <div style="max-width:1440px;margin:0 auto;">
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(32px,4vw,64px);margin-bottom:clamp(36px,4vw,56px);align-items:end;">
+        <h2 style="margin:0;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(34px,4.4vw,64px);line-height:1;letter-spacing:-.015em;">Made in<br>British Columbia.</h2>
+        <p style="margin:0;max-width:420px;font-size:16px;line-height:1.65;color:rgba(241,236,227,.72);">Built close to the people who buy them, from materials that grew in the same weather. Made here, and made to stay.</p>
+      </div>
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:clamp(32px,4vw,44px);">
+        <div style="aspect-ratio:4/5;overflow:hidden;background:#0F0C0A;"><image-slot id="ch-made-shop" shape="rect" placeholder="The workshop, makers building a room (people photography)"></image-slot></div>
+        <div style="aspect-ratio:4/5;overflow:hidden;background:#0F0C0A;"><image-slot id="ch-made-stone" shape="rect" src="uploads/pexels-huum-sauna-heaters-718199222-37816612.jpg" placeholder="Stone and timber detail"></image-slot></div>
+        <div style="aspect-ratio:4/5;overflow:hidden;background:#0F0C0A;"><image-slot id="ch-made-heater" shape="rect" src="uploads/pexels-huum-sauna-heaters-718199222-33517869.jpg" placeholder="Heater and stones, in use"></image-slot></div>
+      </div>
+      <p data-reveal style="margin:0;font-family:'Newsreader',serif;font-size:clamp(19px,2vw,28px);line-height:1.45;color:rgba(241,236,227,.82);max-width:760px;text-wrap:pretty;">Western red cedar and aspen. Coast Mountain stone. Built and commissioned in British Columbia.</p>
+    </div>
+  </section>
+
+  <section id="installation" data-screen-label="Installation" style="background:#F1ECE3;color:#241C16;padding:clamp(88px,12vw,176px) clamp(20px,5vw,64px);">
+    <div style="max-width:1440px;margin:0 auto;">
+      <div data-reveal style="max-width:760px;margin-bottom:clamp(48px,6vw,72px);">
+        <h2 style="margin:0 0 20px;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(34px,4.6vw,72px);line-height:1;letter-spacing:-.015em;">From first question<br>to first heat.</h2>
+        <p style="margin:0;max-width:520px;font-size:16.5px;line-height:1.65;color:rgba(36,28,22,.7);">A premium purchase should take work off your plate, not add to it. We handle the site, the trades and the timeline, so the only thing you plan is who to invite.</p>
+      </div>
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;background:rgba(36,28,22,.16);border:1px solid rgba(36,28,22,.16);">
+        <div style="background:#F1ECE3;padding:clamp(26px,2.8vw,36px) clamp(20px,2vw,28px) clamp(30px,3.4vw,44px);"><h3 style="margin:0 0 10px;font-family:'Newsreader',serif;font-weight:400;font-size:24px;">Choose</h3><p style="margin:0 0 16px;font-size:14px;line-height:1.55;color:rgba(36,28,22,.64);">Pick a model, or let us suggest one from your site and your guest list.</p><p style="margin:0;font-size:13px;color:var(--accent,#AE5233);">You, about a day</p></div>
+        <div style="background:#F1ECE3;padding:clamp(26px,2.8vw,36px) clamp(20px,2vw,28px) clamp(30px,3.4vw,44px);"><h3 style="margin:0 0 10px;font-family:'Newsreader',serif;font-weight:400;font-size:24px;">Plan</h3><p style="margin:0 0 16px;font-size:14px;line-height:1.55;color:rgba(36,28,22,.64);">Site review, foundation and power, permits, and a clear quote.</p><p style="margin:0;font-size:13px;color:var(--accent,#AE5233);">Us, one to two weeks</p></div>
+        <div style="background:#F1ECE3;padding:clamp(26px,2.8vw,36px) clamp(20px,2vw,28px) clamp(30px,3.4vw,44px);"><h3 style="margin:0 0 10px;font-family:'Newsreader',serif;font-weight:400;font-size:24px;">Prepare</h3><p style="margin:0 0 16px;font-size:14px;line-height:1.55;color:rgba(36,28,22,.64);">Approved local trades handle the pad and the power. We coordinate them.</p><p style="margin:0;font-size:13px;color:var(--accent,#AE5233);">Trades, two to four weeks</p></div>
+        <div style="background:#F1ECE3;padding:clamp(26px,2.8vw,36px) clamp(20px,2vw,28px) clamp(30px,3.4vw,44px);"><h3 style="margin:0 0 10px;font-family:'Newsreader',serif;font-weight:400;font-size:24px;">Deliver &amp; install</h3><p style="margin:0 0 16px;font-size:14px;line-height:1.55;color:rgba(36,28,22,.64);">The room arrives built. We place it, connect it, and show you how to use it.</p><p style="margin:0;font-size:13px;color:var(--accent,#AE5233);">Us, about a day</p></div>
+        <div style="background:var(--accent,#AE5233);color:#F1ECE3;padding:clamp(26px,2.8vw,36px) clamp(20px,2vw,28px) clamp(30px,3.4vw,44px);"><h3 style="margin:0 0 10px;font-family:'Newsreader',serif;font-weight:400;font-size:24px;">Heat</h3><p style="margin:0 0 16px;font-size:14px;line-height:1.55;color:rgba(241,236,227,.85);">Fill it, light it, and ask people over. This part is yours.</p><p style="margin:0;font-size:13px;color:rgba(241,236,227,.85);">You, that night</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="homes" data-screen-label="Real Homes" style="background:#1A1512;color:#F1ECE3;padding:clamp(88px,12vw,176px) clamp(20px,5vw,64px);">
+    <div style="max-width:1440px;margin:0 auto;">
+      <h2 data-reveal style="margin:0 0 clamp(48px,6vw,72px);font-family:'Newsreader',serif;font-weight:400;font-size:clamp(34px,4.6vw,68px);line-height:1;letter-spacing:-.015em;">The room everyone remembers.</h2>
+      <div data-reveal style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:clamp(28px,3vw,48px);">
+        <div>
+          <div style="aspect-ratio:3/2;overflow:hidden;background:#0F0C0A;margin-bottom:22px;"><image-slot id="ch-home-1" shape="rect" src="uploads/pexels-filipp-romanovski-297235844-13286779.jpg" placeholder="The sauna at the waterline, dusk"></image-slot></div>
+          <p style="margin:0 0 14px;font-size:13.5px;color:rgba(241,236,227,.55);">Bowen Island, Common House</p>
+          <h3 style="margin:0 0 12px;font-family:'Newsreader',serif;font-weight:400;font-style:italic;font-size:clamp(23px,2.2vw,30px);line-height:1.2;">&ldquo;Sundays turned into seven or eight of us.&rdquo;</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(241,236,227,.68);max-width:440px;">The Lund family built it for two, and it quietly became the reason people drive over. Wet hair, the kettle on, nobody in a hurry to leave.</p>
+        </div>
+        <div>
+          <div style="aspect-ratio:3/2;overflow:hidden;background:#0F0C0A;margin-bottom:22px;"><image-slot id="ch-home-2" shape="rect" src="uploads/pexels-sasha-vukovic-449306304-34155276.jpg" placeholder="The sauna at a home, evening light"></image-slot></div>
+          <p style="margin:0 0 14px;font-size:13.5px;color:rgba(241,236,227,.55);">North Vancouver, Common Four</p>
+          <h3 style="margin:0 0 12px;font-family:'Newsreader',serif;font-weight:400;font-style:italic;font-size:clamp(23px,2.2vw,30px);line-height:1.2;">&ldquo;Two neighbours, most Tuesdays.&rdquo;</h3>
+          <p style="margin:0;font-size:15px;line-height:1.6;color:rgba(241,236,227,.68);max-width:440px;">No occasion required. A standing date with the people next door, the kind of habit a house is better for having.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section data-screen-label="Manifesto" style="background:#D8CFC2;color:#241C16;padding:clamp(96px,13vw,200px) clamp(20px,5vw,64px);">
+    <div data-reveal style="max-width:1040px;margin:0 auto;">
+      <p style="margin:0;font-family:'Newsreader',serif;font-size:clamp(30px,4.4vw,64px);line-height:1.18;text-wrap:pretty;">We built rooms for sleeping, cooking, working. <span style="color:var(--accent,#AE5233);">This one is for people.</span> No screen, no schedule, no hurry. Just wood, water, stone and heat, and whoever you asked in.</p>
+      <p style="margin:34px 0 0;font-family:'Newsreader',serif;font-style:italic;font-size:clamp(19px,2vw,26px);color:rgba(36,28,22,.6);">Stay for one round. Then another.</p>
+    </div>
+  </section>
+
+  <section id="plan" data-screen-label="Plan" style="position:relative;overflow:hidden;background:var(--accent,#AE5233);color:#F1ECE3;padding:clamp(100px,15vw,220px) clamp(20px,5vw,64px);text-align:center;">
+    <video src="uploads/5978825-uhd_4096_2160_24fps.mp4" autoPlay="{{ true }}" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></video>
+    <div style="position:absolute;inset:0;background:rgba(26,21,18,.5);"></div>
+    <div data-reveal style="position:relative;z-index:1;">
+      <h2 style="margin:0 0 48px;font-family:'Newsreader',serif;font-weight:400;font-size:clamp(42px,8.5vw,128px);line-height:.95;letter-spacing:-.02em;">Who are you<br>making room for?</h2>
+      <a href="#plan" style="display:inline-block;font-size:16px;font-weight:600;background:#F1ECE3;color:#241C16;padding:19px 46px;" style-hover="background:#1A1512;color:#F1ECE3;">Plan your HouseHold</a>
+    </div>
+  </section>
+
+  <footer style="background:#1A1512;color:#F1ECE3;overflow:hidden;">
+    <div style="max-width:1440px;margin:0 auto;padding:clamp(56px,7vw,88px) clamp(20px,5vw,64px) clamp(28px,3vw,40px);">
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:40px 32px;margin-bottom:clamp(48px,6vw,72px);">
+        <div style="min-width:200px;">
+          <p style="margin:0 0 22px;font-family:'Newsreader',serif;font-size:21px;line-height:1.3;max-width:250px;">Canadian saunas for better time together.</p>
+          <form onSubmit="{{ onSubscribe }}" style="display:flex;align-items:center;gap:12px;max-width:280px;border-bottom:1px solid rgba(241,236,227,.3);padding-bottom:9px;">
+            <input type="email" placeholder="Your email" style="flex:1;min-width:0;background:transparent;border:0;outline:none;color:#F1ECE3;font-family:inherit;font-size:14.5px;">
+            <button type="submit" aria-label="Subscribe" style="background:transparent;border:0;color:var(--accent,#AE5233);font-family:inherit;font-size:19px;cursor:pointer;padding:0;line-height:1;" style-hover="color:#F1ECE3;">&rarr;</button>
+          </form>
+        </div>
+        <nav style="display:flex;flex-direction:column;gap:13px;">
+          <p style="margin:0 0 6px;font-family:'Newsreader',serif;font-style:italic;font-size:15px;color:var(--accent,#AE5233);">Rooms</p>
+          <a href="#models" style="font-size:15px;color:rgba(241,236,227,.8);">Common Four</a>
+          <a href="#models" style="font-size:15px;color:rgba(241,236,227,.8);">Common Six</a>
+          <a href="#models" style="font-size:15px;color:rgba(241,236,227,.8);">Common House</a>
+          <a href="#models" style="font-size:15px;color:rgba(241,236,227,.8);">Common Custom</a>
+        </nav>
+        <nav style="display:flex;flex-direction:column;gap:13px;">
+          <p style="margin:0 0 6px;font-family:'Newsreader',serif;font-style:italic;font-size:15px;color:var(--accent,#AE5233);">Company</p>
+          <a href="#elements" style="font-size:15px;color:rgba(241,236,227,.8);">The elements</a>
+          <a href="#made" style="font-size:15px;color:rgba(241,236,227,.8);">Made here</a>
+          <a href="#homes" style="font-size:15px;color:rgba(241,236,227,.8);">The guest book</a>
+          <a href="#plan" style="font-size:15px;color:rgba(241,236,227,.8);">Open sessions</a>
+        </nav>
+        <nav style="display:flex;flex-direction:column;gap:13px;">
+          <p style="margin:0 0 6px;font-family:'Newsreader',serif;font-style:italic;font-size:15px;color:var(--accent,#AE5233);">Studio</p>
+          <a href="#plan" style="font-size:15px;color:rgba(241,236,227,.8);">Book a visit</a>
+          <a href="#plan" style="font-size:15px;color:rgba(241,236,227,.8);">hello@householdsaunas.ca</a>
+          <a href="#installation" style="font-size:15px;color:rgba(241,236,227,.8);">Architect pack</a>
+          <a href="#plan" style="font-size:15px;color:rgba(241,236,227,.8);">Instagram</a>
+        </nav>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px 32px;padding-top:22px;border-top:1px solid rgba(241,236,227,.15);font-size:13px;color:rgba(241,236,227,.5);">
+        <span>Made in British Columbia</span>
+        <span>Better time together</span>
+        <span>&copy; 2026 HouseHold Saunas</span>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;: {&quot;width&quot;: 1440, &quot;height&quot;: 900}, &quot;signatureColor&quot;: {&quot;editor&quot;: &quot;color&quot;, &quot;default&quot;: &quot;#AE5233&quot;, &quot;options&quot;: [&quot;#AE5233&quot;, &quot;#8C4A2E&quot;, &quot;#6B5442&quot;, &quot;#241C16&quot;], &quot;tsType&quot;: &quot;string&quot;, &quot;section&quot;: &quot;Identity&quot;, &quot;description&quot;: &quot;Signature accent across the whole site (kept in the warm earth family)&quot;}}">
+class Component extends DCLogic {
+  state = { isMobile: typeof window !== "undefined" && window.innerWidth < 860 };
+  rootRef = React.createRef();
+  navRef = React.createRef();
+
+  renderVals() {
+    return {
+      rootRef: this.rootRef,
+      navRef: this.navRef,
+      showNavLinks: !this.state.isMobile,
+      onSubscribe: (e) => e.preventDefault(),
+    };
+  }
+
+  componentDidMount() {
+    const root = this.rootRef.current;
+    const accent = this.props.signatureColor || "#AE5233";
+    if (root) root.style.setProperty("--accent", accent);
+
+    const nav = this.navRef.current;
+    this._onScroll = () => {
+      const s = window.scrollY > 40;
+      if (nav) {
+        nav.style.background = s ? "rgba(20,17,14,.94)" : "linear-gradient(rgba(20,17,14,.55),rgba(20,17,14,0))";
+        nav.style.borderBottomColor = s ? "rgba(241,236,227,.12)" : "transparent";
+        nav.style.backdropFilter = s ? "blur(8px)" : "none";
+      }
+    };
+    this._onScroll();
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+
+    this._onResize = () => { const m = window.innerWidth < 860; if (m !== this.state.isMobile) this.setState({ isMobile: m }); };
+    window.addEventListener("resize", this._onResize);
+
+    const nodes = Array.from(document.querySelectorAll("[data-reveal]"));
+    nodes.forEach(n => {
+      n.style.opacity = "0";
+      n.style.transform = "translateY(30px)";
+      n.style.transition = "opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1)";
+    });
+    this._io = new IntersectionObserver(es => {
+      es.forEach(e => { if (e.isIntersecting) { e.target.style.opacity = "1"; e.target.style.transform = "none"; this._io.unobserve(e.target); } });
+    }, { threshold: 0.12 });
+    nodes.forEach(n => this._io.observe(n));
+
+    const steamEls = Array.from(document.querySelectorAll("[data-steam]"));
+    steamEls.forEach(el => {
+      const img = el.querySelector("[data-steam-img]");
+      const fog = el.querySelector("[data-steam-fog]");
+      if (img) { img.style.filter = "blur(18px) saturate(.7)"; img.style.transform = "scale(1.06)"; img.style.transition = "filter 1.8s ease, transform 1.8s ease"; }
+      if (fog) { fog.style.opacity = "1"; fog.style.transition = "opacity 1.7s ease"; }
+    });
+    this._sio = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting) {
+          const img = e.target.querySelector("[data-steam-img]");
+          const fog = e.target.querySelector("[data-steam-fog]");
+          if (img) { img.style.filter = "none"; img.style.transform = "none"; }
+          if (fog) fog.style.opacity = "0";
+          this._sio.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.35 });
+    steamEls.forEach(el => this._sio.observe(el));
+
+    const heroEls = Array.from(document.querySelectorAll("[data-hero]"));
+    heroEls.forEach((el, i) => {
+      el.style.opacity = "0";
+      el.style.transform = "translateY(20px)";
+      el.style.filter = "blur(6px)";
+      el.style.transition = "opacity 1.1s ease, transform 1.1s cubic-bezier(.2,.7,.2,1), filter 1.1s ease";
+      el.style.transitionDelay = (0.15 + i * 0.18) + "s";
+    });
+    requestAnimationFrame(() => requestAnimationFrame(() => {
+      heroEls.forEach(el => { el.style.opacity = "1"; el.style.transform = "none"; el.style.filter = "none"; });
+    }));
+
+    this._elCards = Array.from(document.querySelectorAll("[data-el-card]"));
+    this._elCards.forEach(c => {
+      const img = c.querySelector("[data-el-img]");
+      if (!img) return;
+      c._enter = () => { img.style.opacity = "1"; };
+      c._leave = () => { img.style.opacity = "0"; };
+      c.addEventListener("mouseenter", c._enter);
+      c.addEventListener("mouseleave", c._leave);
+    });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this._onScroll);
+    window.removeEventListener("resize", this._onResize);
+    if (this._io) this._io.disconnect();
+    if (this._sio) this._sio.disconnect();
+    if (this._elCards) this._elCards.forEach(c => { if (c._enter) c.removeEventListener("mouseenter", c._enter); if (c._leave) c.removeEventListener("mouseleave", c._leave); });
+  }
+}
+</script>
+</body>
+</html>
